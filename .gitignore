@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment and Secrets (CRITICAL: NEVER COMMIT)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+id_rsa
+*.p12
+*.jks
+*.keystore
+
+# Build Outputs
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# Supabase Local
+supabase/.temp/
+.supabase/
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/*.iml
+android/captures/
+android/.cxx/
+android/app/*.apk
+android/app/*.aab
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Cache & Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vic_cache/
+*.log
+scratch/
+tmp/

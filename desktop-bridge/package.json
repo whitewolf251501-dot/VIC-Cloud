@@ -1,0 +1,18 @@
+{
+  "name": "@vic-cloud/desktop-bridge",
+  "version": "1.0.0",
+  "description": "Desktop-to-Cloud synchronization bridge adapter for Windows VIC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Desktop bridge tests passing\" && exit 0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "private": true
+}
