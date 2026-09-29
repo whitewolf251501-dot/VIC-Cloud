@@ -8,11 +8,17 @@
     "build": "tsc",
     "test": "echo \"Backend tests passing\" && exit 0"
   },
-  "keywords": ["vic", "ai-assistant", "cloud"],
+  "keywords": [
+    "vic",
+    "ai-assistant",
+    "cloud"
+  ],
   "author": "Abyssborned Architect",
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
+    "@supabase/supabase-js": "^2.117.2",
+    "dotenv": "^18.0.4",
     "typescript": "^5.4.0"
   }
 }
