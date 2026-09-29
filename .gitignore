@@ -60,3 +60,6 @@ yarn-error.log*
 *.log
 scratch/
 tmp/
+
+.vercel
+.env*
