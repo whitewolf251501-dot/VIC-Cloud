@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">VIC Assistant</string>
+    <string name="assistant_service_name">VIC Voice Interaction Service</string>
+    <string name="assistant_session_service_name">VIC Session Service</string>
+    <string name="assistant_recognition_service_name">VIC Speech Recognizer</string>
+    <string name="accessibility_service_name">VIC Shortcut Accessibility Service</string>
+    <string name="accessibility_service_description">Enables instant assistant launch via device gesture shortcuts and power button controls.</string>
+    
+    <!-- Status & UI -->
+    <string name="vic_status_ready">VIC Operational</string>
+    <string name="vic_status_listening">Listening…</string>
+    <string name="vic_status_thinking">Thinking…</string>
+    <string name="vic_status_speaking">Speaking…</string>
+    <string name="set_default_assistant">Set VIC as Default Assistant</string>
+    <string name="assistant_active_badge">Default Assistant: ACTIVE</string>
+    <string name="assistant_inactive_badge">Default Assistant: NOT SET</string>
+    
+    <!-- Cloud & Desktop Bridge -->
+    <string name="cloud_connected">Cloud Bridge: Connected</string>
+    <string name="cloud_disconnected">Cloud Bridge: Standalone</string>
+    <string name="desktop_target">Target Workstation: Windows Desktop</string>
+    
+    <!-- Phone Skills -->
+    <string name="whatsapp_confirm_title">Confirm WhatsApp Message</string>
+    <string name="whatsapp_recipient_label">Recipient:</string>
+    <string name="whatsapp_message_label">Draft Message:</string>
+    <string name="btn_confirm_send">Open WhatsApp &amp; Send</string>
+    <string name="btn_cancel">Cancel</string>
+    
+    <!-- Diagnostics -->
+    <string name="fingerprint_title">Fingerprint Gesture Shortcut</string>
+    <string name="fingerprint_desc">On Redmi / Xiaomi devices: Settings -> Additional Settings -> Gesture Shortcuts -> Double tap fingerprint sensor -> Select \"Launch Google Assistant\" (routed to VIC).</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="vic_background_dark">#090D16</color>
+    <color name="vic_card_bg">#111827</color>
+    <color name="vic_card_border">#1F2937</color>
+    <color name="vic_cyan_primary">#38BDF8</color>
+    <color name="vic_cyan_glow">#0284C7</color>
+    <color name="vic_text_primary">#F3F4F6</color>
+    <color name="vic_text_secondary">#9CA3AF</color>
+    <color name="vic_emerald_success">#10B981</color>
+    <color name="vic_amber_warning">#F59E0B</color>
+    <color name="vic_rose_danger">#EF4444</color>
+    <color name="vic_purple_accent">#A855F7</color>
+    <color name="vic_overlay_scrim">#B3090D16</color>
+    <color name="transparent">#00000000</color>
+</resources>

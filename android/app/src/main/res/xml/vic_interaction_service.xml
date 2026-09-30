@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<voice-interaction-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:sessionService="com.velmora.vic.assistant.VicVoiceInteractionSessionService"
+    android:recognitionService="com.velmora.vic.assistant.VicRecognitionService"
+    android:settingsActivity="com.velmora.vic.MainActivity"
+    android:supportsAssist="true"
+    android:supportsLaunchFromKeyguard="true"
+    android:supportsLocalInteraction="true" />

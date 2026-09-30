@@ -1,40 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.velmora.vic">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- Queries for explicit package visibility (Android 11+) -->
+    <queries>
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
+        <intent>
+            <action android:name="android.intent.action.SET_ALARM" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SET_TIMER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="text/plain" />
+        </intent>
+    </queries>
 
     <application
+        android:name=".VicApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="VIC Assistant"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        android:theme="@style/Theme.VIC">
 
-        <!-- Main Activity -->
+        <!-- Main Dashboard Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.VIC">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- Assistant Trigger Activity (Invoked by ACTION_ASSIST and VOICE_ASSIST) -->
+        <activity
+            android:name=".assistant.AssistActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.VIC.AssistOverlay">
             
-            <!-- Default Assistant Action -->
+            <!-- Standard Android Assistant Intents -->
             <intent-filter>
                 <action android:name="android.intent.action.ASSIST" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            
             <intent-filter>
                 <action android:name="android.intent.action.VOICE_ASSIST" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
+            <!-- Search / Assist Long-Press Fallbacks -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH_LONG_PRESS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+
+        <!-- Voice Interaction Service (System Default Assistant Hook) -->
+        <service
+            android:name=".assistant.VicVoiceInteractionService"
+            android:permission="android.permission.BIND_VOICE_INTERACTION"
+            android:exported="true"
+            android:label="@string/assistant_service_name">
+            <meta-data
+                android:name="android.voice_interaction"
+                android:resource="@xml/vic_interaction_service" />
+            <intent-filter>
+                <action android:name="android.service.voice.VoiceInteractionService" />
+            </intent-filter>
+        </service>
+
+        <!-- Voice Interaction Session Service -->
+        <service
+            android:name=".assistant.VicVoiceInteractionSessionService"
+            android:permission="android.permission.BIND_VOICE_INTERACTION"
+            android:exported="true"
+            android:label="@string/assistant_session_service_name" />
+
+        <!-- Speech Recognition Service -->
+        <service
+            android:name=".assistant.VicRecognitionService"
+            android:exported="true"
+            android:label="@string/assistant_recognition_service_name">
+            <intent-filter>
+                <action android:name="android.speech.RecognitionService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.speech"
+                android:resource="@xml/vic_recognition_service" />
+        </service>
+
+        <!-- Accessibility Service (Shortcut & Gesture Fallback for MIUI/HyperOS) -->
+        <service
+            android:name=".assistant.VicAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true"
+            android:label="@string/accessibility_service_name">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/vic_accessibility_service" />
+        </service>
+
+        <!-- Floating Wolf Overlay Foreground Service -->
+        <service
+            android:name=".wolf.WolfOverlayService"
+            android:exported="false" />
 
     </application>
 

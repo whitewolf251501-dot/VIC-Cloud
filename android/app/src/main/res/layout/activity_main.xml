@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vic_background_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="VELMORA VIC"
+                android:textColor="@color/vic_text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05" />
+
+            <TextView
+                android:id="@+id/tvDeviceType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ANDROID NODE"
+                android:textColor="@color/vic_cyan_primary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 3D Wolf Companion Preview Box -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/vic_card_bg"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <WebView
+                    android:id="@+id/previewWolfWebView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent" />
+
+                <TextView
+                    android:id="@+id/tvWolfState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/bg_badge_state"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="3D COMPANION: ACTIVE"
+                    android:textColor="@color/vic_cyan_primary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 1: Default Assistant Status & Setup -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/vic_card_bg"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DEFAULT DIGITAL ASSISTANT"
+                    android:textColor="@color/vic_cyan_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/tvAssistantStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Checking default assistant status…"
+                    android:textColor="@color/vic_text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Select VIC to activate instant voice prompts via home swipe, power button, or fingerprint gesture."
+                    android:textColor="@color/vic_text_secondary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnSetAssistant"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/vic_cyan_primary"
+                    android:text="@string/set_default_assistant"
+                    android:textColor="@color/vic_background_dark"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2: Redmi Note 12 Pro+ Fingerprint Shortcut Guide -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/vic_card_bg"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fingerprint_title"
+                    android:textColor="@color/vic_cyan_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/fingerprint_desc"
+                    android:textColor="@color/vic_text_secondary"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="2dp" />
+
+                <Button
+                    android:id="@+id/btnOpenGestureSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/vic_card_border"
+                    android:text="Open Gesture Settings"
+                    android:textColor="@color/vic_cyan_primary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 3: VIC Cloud & Desktop Workstation Link -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/vic_card_bg"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VIC CLOUD &amp; DESKTOP BRIDGE"
+                    android:textColor="@color/vic_cyan_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/tvCloudStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Connecting to Supabase…"
+                    android:textColor="@color/vic_text_primary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvDesktopStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Workstation: Scanning for desktop node…"
+                    android:textColor="@color/vic_text_secondary"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnPingDesktop"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/vic_card_border"
+                        android:text="Ping Workstation"
+                        android:textColor="@color/vic_cyan_primary"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/btnSyncMemories"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/vic_card_border"
+                        android:text="Sync Memories"
+                        android:textColor="@color/vic_cyan_primary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 4: Floating Companion Overlay Toggle -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/vic_card_bg"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Floating Wolf Overlay"
+                        android:textColor="@color/vic_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Keep 3D Wolf floating over other apps"
+                        android:textColor="@color/vic_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchFloatingWolf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 5: Phone Skills Direct Trigger Testing -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="32dp"
+            app:cardBackgroundColor="@color/vic_card_bg"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SKILLS &amp; SAFEGUARDS TEST SUITE"
+                    android:textColor="@color/vic_cyan_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:columnCount="2"
+                    android:rowCount="2">
+
+                    <Button
+                        android:id="@+id/btnTestAlarm"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:backgroundTint="@color/vic_card_border"
+                        android:text="Test Alarm (07:00)"
+                        android:textColor="@color/vic_text_primary"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/btnTestTimer"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:backgroundTint="@color/vic_card_border"
+                        android:text="Test Timer (5m)"
+                        android:textColor="@color/vic_text_primary"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/btnTestWhatsApp"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:backgroundTint="@color/vic_card_border"
+                        android:text="Test WhatsApp Gate"
+                        android:textColor="@color/vic_text_primary"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/btnLaunchAssistOverlay"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:backgroundTint="@color/vic_cyan_primary"
+                        android:text="Launch Assist UI"
+                        android:textColor="@color/vic_background_dark"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
